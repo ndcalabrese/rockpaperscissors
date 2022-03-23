@@ -17,7 +17,7 @@ function getHand() {
 function playRound(player1, player2) {
     player1.hand = getHand();
     player2.hand = getHand();
-    if (player1.hand == "rock" && player2.hand == "rock") {
+    if (player1.hand == player2.hand) {
         console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' This round is a tie. The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
         return null;
     } else if (player1.hand == "rock" && player2.hand == "scissors") {
@@ -28,9 +28,6 @@ function playRound(player1, player2) {
         player2.score++;
         console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' " + player2.name+ " wins the round! The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
         return player2.score;
-    } else if (player1.hand == "paper" && player2.hand == "paper") {
-        console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' This round is a tie. The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
-        return null;
     } else if (player1.hand == "paper" && player2.hand == "rock") {
         player1.score++;
         console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' " + player1.name + " wins the round! The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
@@ -39,9 +36,6 @@ function playRound(player1, player2) {
         player2.score++;
         console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' " + player2.name + " wins the round! The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
         return player2.score;
-    } else if (player1.hand == "scissors" && player2.hand == "scissors") {
-        console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' This round is a tie. The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
-        return null;
     } else if (player1.hand == "scissors" && player2.hand == "paper") {
         player1.score++;
         console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' " + player1.name + " wins the round! The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
@@ -109,7 +103,7 @@ function playTournament(player1, player2, player3, player4, playUntil) {
 }
 
 //Play a single match between 2 players
-playGame(nick, china, 5);
+//playGame(nick, china, 5);
 
 //Play out a tournament between 4 players
 playTournament(nick, fang, china, elizabeth, 5);

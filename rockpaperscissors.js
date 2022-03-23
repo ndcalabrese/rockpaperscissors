@@ -52,6 +52,8 @@ function playRound(player1, player2) {
         return player2.score;
     }
 }
+
+//Plays a match between 2 players
 function playGame(player1, player2, playUntil) {
     while (player1.score < playUntil && player2.score < playUntil) {
         playRound(player1, player2);
@@ -63,4 +65,52 @@ function playGame(player1, player2, playUntil) {
     }
 }
 
+//Plays a tournament between 4 players
+function playTournament(player1, player2, player3, player4, playUntil) {
+    playGame(player1, player2, playUntil);
+    playGame(player3, player4, playUntil);
+    if (player1.score == playUntil && player3.score == playUntil) {
+        player1.score = 0;
+        player3.score = 0;
+        playGame(player1, player3, playUntil); 
+        if (player1.score == playUntil) {
+            console.log(player1.name + " is the champion!")
+        } else {
+            console.log(player3.name) + " is the champion!"
+        }
+    } else if (player1.score == playUntil && player4.score == playUntil) {
+        player1.score = 0;
+        player4.score = 0;
+        playGame(player1, player4, playUntil);
+        if (player1.score == playUntil) {
+            console.log(player1.name + " is the champion!")
+        } else {
+            console.log(player4.name) + " is the champion!"
+        }
+    } else if (player2.score == playUntil && player3.score == playUntil) {
+        player2.score = 0;
+        player3.score = 0;
+        playGame(player2, player3, playUntil);
+        if (player2.score == playUntil) {
+            console.log(player2.name + " is the champion!")
+        } else {
+            console.log(player3.name) + " is the champion!"
+        }
+    } else if (player2.score == playUntil && player4.score == playUntil) {
+        player2.score = 0;
+        player4.score = 0;
+        playGame(player2, player4, playUntil);
+        if (player2.score == playUntil) {
+            console.log(player2.name + " is the champion!")
+        } else {
+            console.log(player4.name) + " is the champion!"
+        }
+    }
+}
+
+//Play a single match between 2 players
 playGame(nick, china, 5);
+
+//Play out a tournament between 4 players
+playTournament(nick, fang, china, elizabeth, 5);
+

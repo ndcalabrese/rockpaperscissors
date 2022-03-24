@@ -23,27 +23,27 @@ function playRound(player1, player2) {
     } else if (player1.hand == "rock" && player2.hand == "scissors") {
         player1.score++;
         console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' " + player1.name + " wins the round! The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
-        return player1.score;
+        return player1;
     } else if (player1.hand == "rock" && player2.hand == "paper") {
         player2.score++;
         console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' " + player2.name+ " wins the round! The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
-        return player2.score;
+        return player2;
     } else if (player1.hand == "paper" && player2.hand == "rock") {
         player1.score++;
         console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' " + player1.name + " wins the round! The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
-        return player1.score;
+        return player1;
     } else if (player1.hand == "paper" && player2.hand == "scissors") {
         player2.score++;
         console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' " + player2.name + " wins the round! The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
-        return player2.score;
+        return player2;
     } else if (player1.hand == "scissors" && player2.hand == "paper") {
         player1.score++;
         console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' " + player1.name + " wins the round! The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
-        return player1.score;
+        return player1;
     } else if (player1.hand == "scissors" && player2.hand == "rock") {
         player2.score++;
         console.log(player1.name + " threw '" + player1.hand + "' and " + player2.name + " threw '" + player2.hand + ".' " + player2.name + " wins the round! The score is now " + player1.name + ": " + player1.score + " " + player2.name + ": " + player2.score);
-        return player2.score;
+        return player2;
     }
 }
 
@@ -70,7 +70,7 @@ function playTournament(player1, player2, player3, player4, playUntil) {
         if (player1.score == playUntil) {
             console.log(player1.name + " is the champion!")
         } else {
-            console.log(player3.name) + " is the champion!"
+            console.log(player3.name + " is the champion!")
         }
     } else if (player1.score == playUntil && player4.score == playUntil) {
         player1.score = 0;
@@ -79,7 +79,7 @@ function playTournament(player1, player2, player3, player4, playUntil) {
         if (player1.score == playUntil) {
             console.log(player1.name + " is the champion!")
         } else {
-            console.log(player4.name) + " is the champion!"
+            console.log(player4.name + " is the champion!")
         }
     } else if (player2.score == playUntil && player3.score == playUntil) {
         player2.score = 0;
@@ -88,7 +88,7 @@ function playTournament(player1, player2, player3, player4, playUntil) {
         if (player2.score == playUntil) {
             console.log(player2.name + " is the champion!")
         } else {
-            console.log(player3.name) + " is the champion!"
+            console.log(player3.name + " is the champion!")
         }
     } else if (player2.score == playUntil && player4.score == playUntil) {
         player2.score = 0;
@@ -97,7 +97,7 @@ function playTournament(player1, player2, player3, player4, playUntil) {
         if (player2.score == playUntil) {
             console.log(player2.name + " is the champion!")
         } else {
-            console.log(player4.name) + " is the champion!"
+            console.log(player4.name + " is the champion!")
         }
     }
 }

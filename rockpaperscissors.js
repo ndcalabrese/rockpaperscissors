@@ -77,27 +77,27 @@ function playTournament(player1, player2, player3, player4, playUntil) {
         player4.score = 0;
         playGame(player1, player4, playUntil);
         if (player1.score == playUntil) {
-            console.log(player1.name + " is the champion!")
+            console.log(player1.name + " is the world champion!")
         } else {
-            console.log(player4.name + " is the champion!")
+            console.log(player4.name + " is the world champion!")
         }
     } else if (player2.score == playUntil && player3.score == playUntil) {
         player2.score = 0;
         player3.score = 0;
         playGame(player2, player3, playUntil);
         if (player2.score == playUntil) {
-            console.log(player2.name + " is the champion!")
+            console.log(player2.name + " is the world champion!")
         } else {
-            console.log(player3.name + " is the champion!")
+            console.log(player3.name + " is the world champion!")
         }
     } else if (player2.score == playUntil && player4.score == playUntil) {
         player2.score = 0;
         player4.score = 0;
         playGame(player2, player4, playUntil);
         if (player2.score == playUntil) {
-            console.log(player2.name + " is the champion!")
+            console.log(player2.name + " is the world champion!")
         } else {
-            console.log(player4.name + " is the champion!")
+            console.log(player4.name + " is the world champion!")
         }
     }
 }
